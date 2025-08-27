@@ -1,0 +1,25 @@
+﻿/* Reset body so the image truly fills the page */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+/* Use small viewport units to avoid mobile 100vh bugs */
+.page {
+    min-height: 100svh; /* fallbacks */
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.page picture,
+.page img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* The magic: fill + crop like a background */
+.page img {
+    object-fit: cover;
+    object-position: center;
+}
