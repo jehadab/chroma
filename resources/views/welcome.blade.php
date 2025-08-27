@@ -21,23 +21,24 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
-<div class="page">
+<main class="page">
+    <!-- Responsive image swap: laptop/desktop vs mobile -->
     <picture>
-        <!-- Mobile first source -->
+        <!-- Large screens (laptop/desktop) -->
         <source
-            srcset="{{ asset('images/CCS-m.jpg') }}"
-            media="(max-width: 767.98px)">
-
-        <!-- Fallback / default image -->
+            media="(min-width: 1024px)"
+            srcset="{{ asset('images/CCS-l.jpg') }}"
+        />
+        <!-- Default/mobile image -->
         <img
-            src="{{ asset('images/CCS-l.jpg') }}"
-            alt="Under construction"
-            loading="eager"
+            src="{{ asset('images/CCS-m.jpg') }}"
+            alt="Welcome"
             decoding="async"
-            sizes="100vw"
-            class="d-block"> <!-- keep it simple; we force height via CSS -->
+            fetchpriority="high"
+        />
     </picture>
-</div>
+fefe
+</main>
 </body>
 </html>
 
